@@ -34,6 +34,7 @@ GEM
     rack (2.0.6)
     rack-protection (2.0.4)
       rack
+    rainbow (1.99.2)
     require_all (2.0.0)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
@@ -61,6 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   pry
+  rainbow
   require_all
   rest-client
   sinatra-activerecord

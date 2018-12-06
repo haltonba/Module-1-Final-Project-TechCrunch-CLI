@@ -1,30 +1,33 @@
 
 require 'rest-client'
 require 'json'
+require 'rainbow'
 
 
 class CommandLine
 
   #displays welcome message
   def welcome
-    puts "
+    puts Rainbow("
 
-    =========================================================================================================
-             _ _ _     _                      _          _____         _   _____                 _
-            | | | |___| |___ ___ _____ ___   | |_ ___   |_   _|___ ___| |_|     |___ _ _ ___ ___| |_
-            | | | | -_| |  _| . |     | -_|  |  _| . |    | | | -_|  _|   |   --|  _| | |   |  _|   |
-            |_____|___|_|___|___|_|_|_|___|  |_| |___|    |_| |___|___|_|_|_____|_| |___|_|_|___|_|_|
 
-    ==========================================================================================================
+      ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗     ████████╗███████╗ ██████╗██╗  ██╗ ██████╗██████╗ ██╗   ██╗███╗   ██╗ ██████╗██╗  ██╗
+      ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗    ╚══██╔══╝██╔════╝██╔════╝██║  ██║██╔════╝██╔══██╗██║   ██║████╗  ██║██╔════╝██║  ██║
+      ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗         ██║   ██║   ██║       ██║   █████╗  ██║     ███████║██║     ██████╔╝██║   ██║██╔██╗ ██║██║     ███████║
+      ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝         ██║   ██║   ██║       ██║   ██╔══╝  ██║     ██╔══██║██║     ██╔══██╗██║   ██║██║╚██╗██║██║     ██╔══██║
+      ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗       ██║   ╚██████╔╝       ██║   ███████╗╚██████╗██║  ██║╚██████╗██║  ██║╚██████╔╝██║ ╚████║╚██████╗██║  ██║
+       ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝       ╚═╝    ╚═════╝        ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝
 
-"
-    puts "    Here You can find the latest articles straight from the amazing peeps at TechCrunch HQ.\n\n    The ultimately crunchy tech news that you need in your life. "
+
+").magenta
+    puts Rainbow("\n          Here You can find the latest articles straight from the amazing peeps at TechCrunch HQ.
+              \n\n          The ultimately crunchy tech news that you need in your life.\n\n").white.bright
   end
 
   #menu page for user
   def menu
-    puts "
-    Please select from the following options - using numbers (1-6) as your input:
+    puts "#{dashes}\n
+    Please select from the following options - using numbers (1-6) as your input:\n
     - 1 - Titles and authors of latest 10 articles
     - 2 - Quick read of latest 10 articles
     - 3 - See all current authors
@@ -48,9 +51,9 @@ class CommandLine
       show_all_authors
       back_to_menu
     when "4"
-      puts "Here are all the authors to choose from:\n"
+      puts Rainbow("Here are all the authors to choose from:\n").white.bright
       show_all_authors
-      puts "\n Please provide an Author name:"
+      puts Rainbow("\n Please provide an Author name:").white.bright
       author = gets.chomp
       find_article_titles_by_author(author)
       show_full_list_of_articles(author)
@@ -59,27 +62,29 @@ class CommandLine
       show_latest_article
       back_to_menu
     when "6"
-      puts "\n\nThanks for choosing TechCrunch Top 10! See you honeys later... ❤"
+      puts Rainbow("\n\nThanks for choosing TechCrunch Top 10! See you honeys later... ❤\n\n").magenta.bright
       exit
     else
-      puts "Invalid option. Please select a number between 1 and 6."
+      puts Rainbow("Invalid option. Please select a number between 1 and 6.").white.bright
       menu
       menu_choice
     end
   end
 
+  #exits the app
   def exit
     nil
   end
 
+  #reroutes user back to menu
   def back_to_menu
-    puts "\nWould you like to go back to the menu page? (y/n)"
+    puts Rainbow("\nWould you like to go back to the menu page? (y/n)").white.bright
     user_input = gets.chomp
     if user_input == "y"
     menu
     menu_choice
   elsif user_input == "n"
-    puts "Would you like to exit the app? (y/n)"
+    puts Rainbow("Would you like to exit the app? (y/n)").white.bright
     user_input = gets.chomp
     if user_input == "y"
       exit
@@ -90,12 +95,13 @@ class CommandLine
   end
   end
 
+  #loads the response hash
   def search_techcrunch
     response_string = RestClient.get"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=45aee5b7c7584064ac1b1de6297f5137"
     response_hash = JSON.parse(response_string.body)
   end
 
-  #shows a list of all articles - authors and title
+  #creates an array of all articles - authors and title
   def all_article_titles_with_authors
     @all = {}
     search_techcrunch["articles"].each do |hash|
@@ -106,6 +112,7 @@ class CommandLine
     return @all
   end
 
+  #formats the array of all articles - authors and titles
   def show_all_article_titles_with_authors
     @all = all_article_titles_with_authors
     @all.each do |title, author|
@@ -114,13 +121,12 @@ class CommandLine
     return @all
   end
 
+  #prompts user with the choice to read the full article
   def show_full_list_of_articles(author)
-    puts "Would you like to read the article(s)?(y/n)"
+    puts Rainbow("Would you like to read the article(s)?(y/n)").white.bright
     user_input = gets.chomp
     case user_input
     when "y"
-      # puts show_all_article_titles_with_authors
-
       author_articles = all_article_titles_with_authors.select do |title, name|
         name.split(' ')[0] == author
       end
@@ -132,15 +138,14 @@ class CommandLine
         end
       end
       puts array
-      # author_articles.each {|i| puts "#{author} \n\n #{content}"}
     when "n"
-      puts "Sorry to hear that, we'll take you back to the menu now!"
+      puts Rainbow("Sorry to hear that, we'll take you back to the menu now!").white.bright
       menu
       menu_choice
     end
   end
 
-  #shows a list of all articles - title and content
+  #shows a formatted array of all articles - title and content
   def show_all_article_titles_with_content
     @all = {}
     search_techcrunch["articles"].each do |hash|
@@ -153,6 +158,7 @@ class CommandLine
     return nil
   end
 
+  #supporting method used in show full list of articles
   def all_article_titles_with_content
     @all = {}
     search_techcrunch["articles"].each do |hash|
@@ -162,13 +168,15 @@ class CommandLine
     end
     @all
   end
-  #shows all authors in alphabetical order
+
+  #shows an array of all authors in alphabetical order
   def show_all_authors
     @all = []
     search_techcrunch["articles"].each do |article|
       @all << article["author"]
     end
     unique_array = @all.uniq!.sort
+    puts "#{dashes}\n"
     unique_array.each_with_index do |author, index| puts "#{index+1}. #{author}"
     end
     return nil
@@ -195,38 +203,20 @@ class CommandLine
     content = search_techcrunch["articles"][0]["content"]
     publish_time = search_techcrunch["articles"][0]["publishedAt"]
     url = search_techcrunch["articles"][0]["url"]
-    puts "#{title}\n\n#{content}\n\n#{author} - #{publish_time}"
-    puts "\nWould you like to read the full article? (y/n)"
+    puts "#{dashes}\n#{title}\n\n#{content}\n\n#{author} - #{publish_time}\n#{dashes}"
+    puts Rainbow("\nWould you like to read the full article? (y/n)").white.bright
     user_input = gets.chomp
       if user_input == "y"
         system("open #{url}")
       else
-        puts "\nNot your cuppa tea!? Do any of the following articles interest you?\n\n"
-        show_all_articles_with_authors
+        puts Rainbow("\nNot your cuppa tea!?").white.bright
+        menu
       end
   end
 
+  #adds a line as a page breaker
   def dashes
     return "------------------------------------------------------------------------------------------------------"
   end
 
-  # def find_article_by_phrase(phrase)
-  #   @titles = []
-  #   search_techcrunch["articles"].each do |article|
-  #      if article["title"].include?(phrase) || article["content"].include?(phrase)
-  #        @titles << article["title"]
-  #        end
-  #      end
-  #   #Needs an if there is a title
-  #     if @titles.length != 0
-  #       puts "Please enter the number of the article you would like to view:"
-  #       @titles.each_with_index do |title, index| puts "#{index+1}. #{title}"
-  #       elsif
-  #       puts "Please enter another keyword(s)."
-  #     end
-  #   end
-  #   user_input = gets.chomp
-  #
-  #   return nil
-  # end
 end
