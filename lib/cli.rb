@@ -8,14 +8,17 @@ class CommandLine
   #displays welcome message
   def welcome
     puts "
-     _ _ _     _                      _          _____         _   _____                 _
-    | | | |___| |___ ___ _____ ___   | |_ ___   |_   _|___ ___| |_|     |___ _ _ ___ ___| |_
-    | | | | -_| |  _| . |     | -_|  |  _| . |    | | | -_|  _|   |   --|  _| | |   |  _|   |
-    |_____|___|_|___|___|_|_|_|___|  |_| |___|    |_| |___|___|_|_|_____|_| |___|_|_|___|_|_|
 
-    
+    =========================================================================================================
+             _ _ _     _                      _          _____         _   _____                 _
+            | | | |___| |___ ___ _____ ___   | |_ ___   |_   _|___ ___| |_|     |___ _ _ ___ ___| |_
+            | | | | -_| |  _| . |     | -_|  |  _| . |    | | | -_|  _|   |   --|  _| | |   |  _|   |
+            |_____|___|_|___|___|_|_|_|___|  |_| |___|    |_| |___|___|_|_|_____|_| |___|_|_|___|_|_|
+
+    ==========================================================================================================
+
 "
-    puts "Here You can find the latest articles straight from the amazing peeps at TechCrunch HQ.\n\nThe ultimately crunchy tech news that you need in your life. "
+    puts "    Here You can find the latest articles straight from the amazing peeps at TechCrunch HQ.\n\n    The ultimately crunchy tech news that you need in your life. "
   end
 
   #menu page for user
