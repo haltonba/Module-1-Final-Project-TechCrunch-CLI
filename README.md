@@ -2,6 +2,6 @@
 
 ## Using the TechCrunch API - Flatiron Module 1 Final Project
 
-(img/app_overview.png)
+![headerimg](img/app_overview.png)
 
 The TechCrunch API
