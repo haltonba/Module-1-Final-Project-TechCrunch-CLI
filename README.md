@@ -49,27 +49,27 @@ gem 'rainbow'
 
 ![main](img/app_overview.png)
 
-## Option 1 - Titles and Authors
+## 1 - Titles and Authors
 
 ![main](img/menu_option_1.png)
 
-## Option 2 - Titles and Brief Content
+## 2 - Titles and Brief Content
 
 ![main](img/menu_option_2.png)
 
-## Option 3 - Unique List of Authors
+## 3 - Unique List of Authors
 
 ![main](img/menu_option_3.png)
 
-## Option 4 - Search for Author and find Article(s)
+## 4 - Search for Author and find Article(s)
 
 ![main](img/menu_option_4_author_list.png)
 ![main](img/menu_option_4.png)
 
-## Option 5 - Latest article and link to view full article
+## 5 - Latest article and link to view full article
 
 ![main](img/menu_option_5.png)
 
-## Option 6 - Exit App
+## 6 - Exit App
 
 ![main](img/menu_option_6.png)
