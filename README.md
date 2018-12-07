@@ -1,6 +1,6 @@
 # 🗞 📰 TechCrunch Top 10 📰 🗞
 
-![main](img/app_overview.png)
+![maincast](img/demo.mov)
 
 ## Using the TechCrunch API - Flatiron Module 1 Final Project
 ### About
