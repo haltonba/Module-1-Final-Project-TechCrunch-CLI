@@ -20,8 +20,8 @@ class CommandLine
 
 
 ").magenta
-    puts Rainbow("\n          Here You can find the latest articles straight from the amazing peeps at TechCrunch HQ.
-              \n\n          The ultimately crunchy tech news that you need in your life.\n\n").white.bright
+    puts Rainbow("\n    Here you can find the latest articles straight from the amazing peeps at TechCrunch HQ.
+              \n\n    The ultimately crunchy tech news that you need in your life.\n\n").white.bright
   end
 
   #menu page for user
@@ -53,7 +53,7 @@ class CommandLine
     when "4"
       puts Rainbow("Here are all the authors to choose from:\n").white.bright
       show_all_authors
-      puts Rainbow("\n Please provide an Author name:").white.bright
+      puts Rainbow("\nPlease provide an author name:").white.bright
       author = gets.chomp
       find_article_titles_by_author(author)
       show_full_list_of_articles(author)
@@ -62,7 +62,6 @@ class CommandLine
       show_latest_article
       back_to_menu
     when "6"
-      puts Rainbow("\n\nThanks for choosing TechCrunch Top 10! See you honeys later... ❤\n\n").magenta.bright
       exit
     else
       puts Rainbow("Invalid option. Please select a number between 1 and 6.").white.bright
@@ -73,6 +72,7 @@ class CommandLine
 
   #exits the app
   def exit
+    puts Rainbow("\n\nThanks for choosing TechCrunch Top 10! See you honeys later... ❤\n\n").magenta.bright
     nil
   end
 
@@ -137,7 +137,8 @@ class CommandLine
           array << hay[title]
         end
       end
-      puts array
+      array.each_with_index do |article, index| puts "\n#{dashes}\n#{index+1}. #{article}\n#{dashes}\n"
+      end
     when "n"
       puts Rainbow("Sorry to hear that, we'll take you back to the menu now!").white.bright
       menu
