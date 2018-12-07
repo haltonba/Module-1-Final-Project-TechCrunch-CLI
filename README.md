@@ -5,8 +5,8 @@
 ## Using the TechCrunch API - Flatiron Module 1 Final Project
 ### About
 
-TechCrunch Top Ten was created by Claudia([claudia95](https://github.com/claudia95)) and Janine([ja9-look](https://github.com/ja9-look)).
-The TechCruch API was called using Ruby, to obtain the top 10 articles on the TechCrunch News webpage.
+TechCrunch Top Ten was created by Claudia ([claudia95](https://github.com/claudia95)) and Janine ([ja9-look](https://github.com/ja9-look)).
+The TechCruch API was called using Ruby, to obtain the top 10 articles on the TechCrunch News webpage. 
 This is a live API that updates the articles regularly so that readers will get hot-off-the-press news.
 
 ### MVP
