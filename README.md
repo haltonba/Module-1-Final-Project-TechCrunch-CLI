@@ -30,4 +30,4 @@ In order to further our app, we wanted to:
 
 ### API
 
-[TechCrunch](https://techcrunch.com/) [Link to TechCrunch API](https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=45aee5b7c7584064ac1b1de6297f5137)
+[TechCrunch API](https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=45aee5b7c7584064ac1b1de6297f5137)
