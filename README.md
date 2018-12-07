@@ -43,7 +43,7 @@ gem 'json'
 gem 'rainbow'
 ```
 
-## Walkthrough
+### Walkthrough
 
 ## Main Menu
 
@@ -63,8 +63,11 @@ gem 'rainbow'
 
 ## 4 - Search for Author and find Article(s)
 
-![main](img/menu_option_4_author_list.png)
+Shows a unique list of authors
 ![main](img/menu_option_4.png)
+
+Shows the short content of all articles under selected author
+![main](img/menu_option_4_author_list.png)
 
 ## 5 - Latest article and link to view full article
 
