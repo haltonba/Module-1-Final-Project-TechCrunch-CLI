@@ -2,7 +2,7 @@
 
 ## Using the TechCrunch API - Flatiron Module 1 Final Project
 
-![headerimg](img/app_overview.png)
+![main](img/app_overview.png)
 
 ###About
 
