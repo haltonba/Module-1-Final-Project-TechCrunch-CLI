@@ -1,5 +1,7 @@
 # 🗞 📰 TechCrunch Top 10 📰 🗞
 
+## Video Demo
+
 [![asciicast](img/ascii_screenshot.png)](https://asciinema.org/a/7aK4AUWlmLbdw1LZJecyGFEpW)
 
 ## Using the TechCrunch API - Flatiron Module 1 Final Project
