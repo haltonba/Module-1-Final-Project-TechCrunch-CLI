@@ -21,7 +21,7 @@ class CommandLine
 
 ").magenta
     puts Rainbow("\n    Here you can find the latest articles straight from the amazing peeps at TechCrunch HQ.
-              \n\n    The ultimately crunchy tech news that you need in your life.\n\n").white.bright
+              \n\n    The ultimate crunchy tech news that you need in your life.\n\n").white.bright
   end
 
   #menu page for user
@@ -72,7 +72,7 @@ class CommandLine
 
   #exits the app
   def exit
-    puts Rainbow("\n\nThanks for choosing TechCrunch Top 10! See you honeys later... ❤\n\n").magenta.bright
+    puts Rainbow("\n\n🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 Thanks for choosing TechCrunch Top 10! See you honeys later... ❤ 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑 🦑\n\n").magenta.bright
     nil
   end
 
