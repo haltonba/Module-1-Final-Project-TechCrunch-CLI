@@ -6,5 +6,4 @@ gem "sqlite3"
 gem "pry"
 gem "require_all"
 gem 'rest-client'
-get 'json'
 gem 'rainbow'

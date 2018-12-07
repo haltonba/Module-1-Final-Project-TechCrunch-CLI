@@ -32,12 +32,44 @@ In order to further our app, we wanted to:
 
 [TechCrunch API](https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=45aee5b7c7584064ac1b1de6297f5137)
 
-## Gems
-
+### Gems
+```
 gem "sinatra-activerecord"
 gem "sqlite3"
 gem "pry"
 gem "require_all"
 gem 'rest-client'
-get 'json'
+gem 'json'
 gem 'rainbow'
+```
+
+## Walkthrough
+
+## Main Menu
+
+![main](img/app_overview.png)
+
+## Option 1 - Titles and Authors
+
+![main](img/menu_option_1.png)
+
+## Option 2 - Titles and Brief Content
+
+![main](img/menu_option_2.png)
+
+## Option 3 - Unique List of Authors
+
+![main](img/menu_option_3.png)
+
+## Option 4 - Search for Author and find Article(s)
+
+![main](img/menu_option_4_author_list.png)
+![main](img/menu_option_4.png)
+
+## Option 5 - Latest article and link to view full article
+
+![main](img/menu_option_5.png)
+
+## Option 6 - Exit App
+
+![main](img/menu_option_6.png)
