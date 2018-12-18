@@ -1,59 +1,82 @@
-# Module One Final Project Guidelines
+# 🗞 📰 TechCrunch Top 10 📰 🗞
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
+## Video Demo
 
-For your final project, we'll be building a Command Line database application.
+[![asciicast](img/ascii_screenshot.png)](https://asciinema.org/a/7aK4AUWlmLbdw1LZJecyGFEpW)
 
-## Project Requirements
+## Using the TechCrunch API - Flatiron Module 1 Final Project
+### About
 
-### Option One - Data Analytics Project
+TechCrunch Top Ten was created by Claudia ([claudia95](https://github.com/claudia95)) and Janine ([ja9-look](https://github.com/ja9-look)).
+The TechCruch API was called using Ruby, to obtain the top 10 articles from the TechCrunch News webpage.
+This is a live API that updates the articles regularly so that readers will get hot-off-the-press tech news.
 
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have at minimum three models including one join model. This means you must have a many-to-many relationship.
-3. You should seed your database using data that you collect either from a CSV, a website by scraping, or an API.
-4. Your models should have methods that answer interesting questions about the data. For example, if you've collected info about movie reviews, what is the most popular movie? What movie has the most reviews?
-5. You should provide a CLI to display the return values of your interesting methods.  
-6. Use good OO design patterns. You should have separate classes for your models and CLI interface.
+### MVP
 
-  **Resource:** [Easy Access APIs](https://github.com/learn-co-curriculum/easy-access-apis)
+We wanted our app to fulfill the following MVPs:
 
-### Option Two - Command Line CRUD App
+1. User should be able to see the latest article titles and authors
+2. User should be able to have a brief overview of the latest articles
+3. User should be able to see a unique list of authors
+4. User should be able to see all articles under a specified author
+5. User should be able to see the latest single article
 
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have a minimum of three models.
-3. You should build out a CLI to give your user full CRUD ability for at least one of your resources. For example, build out a command line To-Do list. A user should be able to create a new to-do, see all todos, update a todo item, and delete a todo. Todos can be grouped into categories, so that a to-do has many categories and categories have many to-dos.
-4. Use good OO design patterns. You should have separate models for your runner and CLI interface.
+### Stretch Goals
 
-### Brainstorming and Proposing a Project Idea
+In order to further our app, we wanted to:
 
-Projects need to be approved prior to launching into them, so take some time to brainstorm project options that will fulfill the requirements above.  You must have a minimum of four [user stories](https://en.wikipedia.org/wiki/User_story) to help explain how a user will interact with your app.  A user story should follow the general structure of `"As a <role>, I want <goal/desire> so that <benefit>"`. In example, if we were creating an app to randomly choose nearby restaurants on Yelp, we might write:
+1. Ensure that the CLI is easy for the user to read
+2. Implement emojis into the CLI
+3. Use additional gems to make the app aesthetically pleasing
+4. Allow the user to easily manoeuvre around the app
 
-* As a user, I want to be able to enter my name to retrieve my records
-* As a user, I want to enter a location and be given a random nearby restaurant suggestion
-* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
-* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
+### API
 
-## Instructions
+[TechCrunch API](https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=45aee5b7c7584064ac1b1de6297f5137)
 
-1. Fork and clone this repository.
-2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
-3. Make sure to create a good README.md with a short description, install instructions, a contributors guide and a link to the license for your code.
-4. Make sure your project checks off each of the above requirements.
-5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
-    * The video should:
-      - Have an overview of your project.(2 minutes max)
-6. Prepare a presentation to follow your video.(3 minutes max)
-    * Your presentation should:
-      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      - Discuss 3 things you learned in the process of working on this project.
-      - Address, if anything, what you would change or add to what you have today?
-      - Present any code you would like to highlight.   
-7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
-
----
-### Common Questions:
-- How do I turn off my SQL logger?
-```ruby
-# in config/environment.rb add this line:
-ActiveRecord::Base.logger = nil
+### Gems
 ```
+gem "sinatra-activerecord"
+gem "sqlite3"
+gem "pry"
+gem "require_all"
+gem 'rest-client'
+gem 'json'
+gem 'rainbow'
+```
+
+# Walkthrough
+
+## Main Menu
+
+![main](img/app_overview.png)
+
+## 1 - Titles and Authors
+
+![main](img/menu_option_1.png)
+
+## 2 - Titles and Brief Content
+
+![main](img/menu_option_2.png)
+
+## 3 - Unique List of Authors
+
+![main](img/menu_option_3.png)
+
+## 4 - Search for Author and find Article(s)
+
+Shows a unique list of authors:
+
+![main](img/menu_option_4.png)
+
+Shows the short content of all articles under selected author:
+
+![main](img/menu_option_4_author_list.png)
+
+## 5 - Latest article and link to view full article (opens url in browser)
+
+![main](img/menu_option_5.png)
+
+## 6 - Exit App
+
+![main](img/menu_option_6.png)
